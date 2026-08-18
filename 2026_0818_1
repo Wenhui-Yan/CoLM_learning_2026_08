@@ -1,0 +1,34 @@
+## 1.1 进入 include 目录并编辑 define.h
+```bash
+cd ~/CoLM-CoLM2024-Tutorial/include
+vi define.h
+```
+## 1.2 自然地表单点模拟的宏定义设置
+```bash
+
+```
+## 2 重新编译模型
+```bash
+cd ~/CoLM-CoLM2024-Tutorial
+make clean          # 清理之前的编译文件
+make                # 编译模型
+ls -l run/*.x       # 检查可执行文件（应有 mksrfdata.x、mkinidata.x、colm.x）
+```
+## 3.1 准备站点数据文件
+```bash
+# 进入 run 目录
+cd ~/CoLM-CoLM2024-Tutorial/run
+# 复制站点观测数据
+cp /share/home/dq089/training2026/PLUMBER2s/Sitedata/IT-Isp_2013-2014_FLUXNET2015_site.nc ./
+
+# 复制 Forcing Namelist
+cp /share/home/dq089/training2026/PLUMBER2s/Forcingnml/IT-Isp.nml ./
+
+# 复制 Run Namelist
+cp /share/home/dq089/training2026/IT-Isp/Site_IT-Isp.nml ./
+vi define.h
+```
+## 4.1 配置 Forcing Namelist
+```bash
+vi IT-Isp.nml
+```
