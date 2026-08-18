@@ -23,23 +23,49 @@ ssh node112                                 # 登录到计算节点（编译需�
 source /share/home/colm150/.bashrc          # 加载已配置好的 Intel 环境
 which ifort                                 # 验证 ifort 是否可用
 ifort --version                             # 查看版本
-
+```
 ## 四、配置编译器路径（Makeoptions）
 ```bash
 cd ~/CoLM-CoLM2024-Tutorial/include        # 进入 include 目录
 vi Makeoptions.SYSU-BaiduBoat.intel        # 编辑编译器配置文件
-
+```
 ## 五、配置模型功能开关（define.h）
 ```bash
 vi define.h                                 # 编辑宏定义文件
-
+```
 ## 六、编译模型
 ```bash
 cd ~/CoLM-CoLM2024-Tutorial                # 回到模型根目录
 make clean                                  # 清理之前的编译文件
 make                                        # 编译模型
 ls -l run/*.x                               # 确认生成三个可执行文件
-
+```
 ## 七、配置 namelist.nml（模拟参数）
 ```bash
+cd ~/CoLM-CoLM2024-Tutorial/run            # 进入 run 目录
+cp China_Grid_30km_IGBP_VG_CaMa.nml namelist.nml   # 复制模板
+vi namelist.nml                             # 编辑模拟配置文件
 /  #文件末尾必须有/
+```
+## 八、配置 forcing（大气驱动数据）
+```bash
+cp /share/home/dq013/zhwei/colm/script/CoLM202X_20250724/run/forcing/JRA3Q.nml ./
+vi JRA3Q.nml
+DEF_forcing%groupby = 'yearmonth'   ! 文件名格式：tmp2m_2020_06.nc
+```
+## 九、提交作业运行
+```bash
+mkdir -p /share/home/colm099/CoLM_output   #创建输出目录
+vi submit.colm                             #vi submit.colm
+bsub < submit.colm           # 提交作业到调度系统
+bjobs                        # 查看作业状态
+tail -f log.mksrfdata        # 实时查看运行日志
+```
+
+
+
+
+
+
+
+
