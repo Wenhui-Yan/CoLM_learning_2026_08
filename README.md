@@ -1,2 +1,4 @@
-# CoLM2024 Workshop Practice Notes
-The 1st CoLM Summer Training Workshop, Zhuhai, 2026, instructed by Prof. Yongjiu Dai's Group, Sun Yat-sen University
+# The Common Land Model Version 202X (CoLM202X)
+
+[![Build_CoLM202X_gnu](https://github.com/CoLM-SYSU/CoLM202X/actions/workflows/build_CoLM_gnu.yml/badge.svg)](https://github.com/CoLM-SYSU/CoLM202X/actions/workflows/build_CoLM_gnu.yml)
+
